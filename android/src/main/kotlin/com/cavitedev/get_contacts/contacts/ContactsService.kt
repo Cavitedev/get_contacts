@@ -52,7 +52,7 @@ object ContactsService {
                 null,
                 null,
                 null,
-                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
+                null)
         if (contactsCursor != null && contactsCursor.count > 0) {
             val idIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts._ID)
             val nameIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
