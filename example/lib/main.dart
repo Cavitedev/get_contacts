@@ -27,9 +27,9 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await GetContacts.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      platformVersion = await GetContacts.contactsJsonString;
+    } on PlatformException catch (e){
+      platformVersion = 'Error code is ' + e.code;
     }
 
     // If the widget was removed from the tree while the asynchronous platform

@@ -1,7 +1,7 @@
 name: get_contacts
 description: Retrieve contacts from android
 version: 0.0.1
-author:
+author: Cavitedev
 homepage:
 
 environment:
@@ -30,8 +30,8 @@ flutter:
       android:
         package: com.cavitedev.get_contacts
         pluginClass: GetContactsPlugin
-      ios:
-        pluginClass: GetContactsPlugin
+  #    ios:
+  #      pluginClass: GetContactsPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

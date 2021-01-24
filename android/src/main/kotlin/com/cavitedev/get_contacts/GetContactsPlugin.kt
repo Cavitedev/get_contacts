@@ -1,36 +1,88 @@
 package com.cavitedev.get_contacts
 
-import androidx.annotation.NonNull
-
+import android.app.Activity
+import android.content.Context
+import com.cavitedev.get_contacts.contacts.MethodCallServiceHandler
+import com.cavitedev.get_contacts.permissions.PermissionManager
 import io.flutter.embedding.engine.plugins.FlutterPlugin
-import io.flutter.plugin.common.MethodCall
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
+import io.flutter.plugin.common.PluginRegistry
 
 /** GetContactsPlugin */
-class GetContactsPlugin: FlutterPlugin, MethodCallHandler {
-  /// The MethodChannel that will the communication between Flutter and native Android
-  ///
-  /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-  /// when the Flutter Engine is detached from the Activity
-  private lateinit var channel : MethodChannel
+class GetContactsPlugin : FlutterPlugin, ActivityAware {
 
-  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "get_contacts")
-    channel.setMethodCallHandler(this)
-  }
+    private var methodCallHandler: MethodCallServiceHandler? = null
+    private var methodChannel: MethodChannel? = null
 
-  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+
+    override fun onAttachedToEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+
+        startListening(
+                binding.applicationContext,
+                binding.binaryMessenger
+        )
     }
-  }
 
-  override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
-    channel.setMethodCallHandler(null)
-  }
+    override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+        stopListening()
+    }
+
+    override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+        startListeningToActivity(
+                binding.activity,
+                { listener: PluginRegistry.ActivityResultListener? -> binding.addActivityResultListener(listener!!) },
+                { listener: PluginRegistry.RequestPermissionsResultListener? -> binding.addRequestPermissionsResultListener(listener!!) }
+        )
+    }
+
+    override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+        onAttachedToActivity(binding)
+    }
+
+    override fun onDetachedFromActivity() {
+        stopListeningToActivity()
+    }
+
+    override fun onDetachedFromActivityForConfigChanges() {
+        onDetachedFromActivity()
+    }
+
+    private fun startListening(applicationContext: Context, messenger: BinaryMessenger) {
+        this.methodChannel = MethodChannel(
+                messenger,
+                "com.cavitedev.get_contacts")
+        methodCallHandler = MethodCallServiceHandler(applicationContext,PermissionManager())
+
+        methodChannel!!.setMethodCallHandler(methodCallHandler)
+
+    }
+
+    private fun stopListening() {
+        methodChannel?.setMethodCallHandler(null)
+        methodChannel = null
+        methodCallHandler = null
+    }
+
+    private fun startListeningToActivity(
+            activity: Activity,
+            activityRegistry: PermissionManager.ActivityRegistry,
+            permissionRegistry: PermissionManager.PermissionRegistry
+    ) {
+
+        methodCallHandler?.activity = activity
+        methodCallHandler?.activityRegistry = activityRegistry
+        methodCallHandler?.permissionRegistry = permissionRegistry
+
+
+    }
+
+    private fun stopListeningToActivity() {
+        methodCallHandler?.activity = null
+        methodCallHandler?.activityRegistry = null
+        methodCallHandler?.permissionRegistry = null
+
+    }
 }
