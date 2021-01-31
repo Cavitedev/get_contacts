@@ -44,7 +44,7 @@ object ContactsService {
         return contacts
     }
 
-    private fun getPhoneContacts(contentRes: ContentResolver): ArrayList<Contact> {
+    private fun getPhoneContacts(contentRes: ContentResolver): List<Contact> {
 
         val contactsList = ArrayList<Contact>()
         val contactsCursor = contentRes.query(
@@ -68,7 +68,7 @@ object ContactsService {
         return contactsList
     }
 
-    private fun getContactNumbers(contentRes: ContentResolver): HashMap<String, ArrayList<String>> {
+    private fun getContactNumbers(contentRes: ContentResolver): Map<String, List<String>> {
         val contactsNumberMap = HashMap<String, ArrayList<String>>()
         val phoneCursor: Cursor? = contentRes.query(
                 ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -98,7 +98,7 @@ object ContactsService {
         return contactsNumberMap
     }
 
-    private fun getContactEmails(contentRes: ContentResolver): HashMap<String, ArrayList<String>> {
+    private fun getContactEmails(contentRes: ContentResolver): Map<String, List<String>> {
         val contactsEmailMap = HashMap<String, ArrayList<String>>()
         val emailCursor = contentRes.query(ContactsContract.CommonDataKinds.Email.CONTENT_URI,
                 null,
@@ -124,7 +124,7 @@ object ContactsService {
         return contactsEmailMap
     }
 
-    private fun getContactCompanies(contentRes: ContentResolver): HashMap<String, ArrayList<Company>> {
+    private fun getContactCompanies(contentRes: ContentResolver): Map<String, List<Company>> {
         val contactsCompanyMap = HashMap<String, ArrayList<Company>>()
         val where = ContactsContract.Data.MIMETYPE + " = ?"
         val params = arrayOf(ContactsContract.CommonDataKinds.Organization.CONTENT_ITEM_TYPE)
