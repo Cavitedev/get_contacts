@@ -49,13 +49,13 @@ object ContactsService {
         val contactsList = ArrayList<Contact>()
         val contactsCursor = contentRes.query(
                 ContactsContract.Contacts.CONTENT_URI,
-                arrayOf(ContactsContract.Contacts._ID,ContactsContract.Contacts.DISPLAY_NAME),
+                arrayOf(ContactsContract.Contacts._ID,ContactsContract.Contacts.DISPLAY_NAME_PRIMARY),
                 null,
                 null,
                 null)
         if (contactsCursor != null && contactsCursor.count > 0) {
             val idIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts._ID)
-            val nameIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)
+            val nameIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY)
             while (contactsCursor.moveToNext()) {
                 val id = contactsCursor.getString(idIndex)
                 val name = contactsCursor.getString(nameIndex)
