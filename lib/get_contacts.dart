@@ -11,7 +11,6 @@ class GetContacts {
 
     contactsJson = await _channel.invokeMethod('getContacts');
 
-
     return contactsJson;
   }
 }

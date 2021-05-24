@@ -3,7 +3,7 @@ import 'package:get_contacts/get_contacts.dart';
 
 void main() {
 
-  TestWidgetsFlutterBinding.ensureInitialized();
+
 
 
 

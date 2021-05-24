@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6ecc787e-f756-4a42-b90a-d63cff342305" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/cavitedev/get_contacts/contacts/ContactsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/cavitedev/get_contacts/contacts/ContactsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/get_contacts.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/get_contacts.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/get_contacts_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/get_contacts_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +37,14 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/src/main" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Personal\Android\Plugins\get_contacts\android\src\main" />
+    </key>
   </component>
   <component name="RunManager" selected="Flutter.example/lib/main.dart">
     <configuration name="getPlatformVersion" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
@@ -68,10 +84,10 @@
     <option name="LAST_COMMIT_MESSAGE" value=":boom: Plugin works now" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1611500309333">
+    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1612104085817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1611500309333" />
+    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1612104085817" />
     <state x="545" y="111" key="CommitChangelistDialog2" timestamp="1611504566691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -84,29 +100,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="660" y="222" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611493232027" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1611509128898">
+    <state width="1860" height="2" key="GridCell.Tab.0.bottom" timestamp="1612112362991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611509128898" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1611509128898">
+    <state width="1860" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612112362991" />
+    <state width="1860" height="2" key="GridCell.Tab.0.center" timestamp="1612112362990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611509128898" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1611509128898">
+    <state width="1860" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612112362990" />
+    <state width="1860" height="2" key="GridCell.Tab.0.left" timestamp="1612112362990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611509128898" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1611509128898">
+    <state width="1860" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612112362990" />
+    <state width="1860" height="2" key="GridCell.Tab.0.right" timestamp="1612112362991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611509128898" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1611504572228">
+    <state width="1860" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612112362991" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1612098687486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611504572228" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612098687486" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616622223374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1616622223374" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1611507278078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611507278078" />
+    <state x="616" y="242" key="run.anything.popup" timestamp="1612099166488">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612099166488" />
   </component>
 </project>

@@ -45,7 +45,6 @@ object ContactsService {
     }
 
     private fun getPhoneContacts(contentRes: ContentResolver): List<Contact> {
-
         val contactsList = ArrayList<Contact>()
         val contactsCursor = contentRes.query(
                 ContactsContract.Contacts.CONTENT_URI,
@@ -54,6 +53,7 @@ object ContactsService {
                 null,
                 null)
         if (contactsCursor != null && contactsCursor.count > 0) {
+
             val idIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts._ID)
             val nameIndex = contactsCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME_PRIMARY)
             while (contactsCursor.moveToNext()) {
